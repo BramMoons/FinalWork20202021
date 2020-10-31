@@ -1,16 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 
-class Home extends React.Component {
-
-    render() {
-        return(
-            <div id="home">
-                <h1>Home page test</h1>
-            </div>
-        );
-    }
-
+function Home(props) {
+    return (
+        <div id="Home">
+            <h1>Home page function</h1>
+        </div>
+    );
 }
+
+
 
 export default Home;
