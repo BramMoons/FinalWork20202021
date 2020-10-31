@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-function AddAnimal(props) {
+function AddAnimal() {
     return(
         <div id="AddAnimal">
                <h1>Function Add animal page test</h1>
