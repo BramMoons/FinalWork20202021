@@ -17,12 +17,12 @@ class App extends Component {
       <HashRouter>
         <div>
           <div id="nav">
-            <h1>Final work Bram Moons</h1>
+            <h1 id="title">Final work Bram Moons</h1>
             <ul>
-              <li><NavLink exact to="/">Home</NavLink></li>
-              <li><NavLink exact to="/AddAnimal">AddAnimal</NavLink></li>
-              <li><NavLink exact to="/AddWalk">AddWalk</NavLink></li>
-              <li><NavLink exact to="/AllWalks">AllWalks</NavLink></li>
+              <li id="navLi"><NavLink exact to="/">Home</NavLink></li>
+              <li id="navLi"><NavLink exact to="/AddAnimal">AddAnimal</NavLink></li>
+              <li id="navLi"><NavLink exact to="/AddWalk">AddWalk</NavLink></li>
+              <li id="navLi"><NavLink exact to="/AllWalks">AllWalks</NavLink></li>
             </ul>
           </div>
           <div className="content">
