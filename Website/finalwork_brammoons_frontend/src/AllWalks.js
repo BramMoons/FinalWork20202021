@@ -4,7 +4,7 @@ import DataSheet from 'react-datasheet';
 
 class AllWalks extends React.Component {
 
-    Constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             grid: [
