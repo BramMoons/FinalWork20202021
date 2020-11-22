@@ -1,8 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 import DataSheet from 'react-datasheet';
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class AllWalks extends React.Component {
+
+    static defaultProps = {
+        center: {
+            lat: 59.95,
+            lng: 30.33
+        },
+        zoom: 11
+    };
 
     constructor(props) {
         super(props);
@@ -56,6 +67,22 @@ class AllWalks extends React.Component {
                     onContextMenu={this.onContextMenu}
                     onCellsChanged={this.onCellsChanged}
                 />
+                <div style={{ height: '50vh', width: '50%' }}>
+                    <div style={{ height: '100%', widht: '100%' }}>
+                        <GoogleMapReact
+                            //Google maps API requires the need of API key before you can use it
+                            bootstrapURLKeys={{ key: 'AIzaSyCam1zls00fGVo0nUgJNlGPdgmRhPST5xc' }}
+                            defaultCenter={this.props.center}
+                            defaultZoom={this.props.zoom}
+                        >
+                            <AnyReactComponent
+                                lat={50.833212}
+                                lng={4.016631}
+                                text="Colruyt Ninove"
+                            />
+                        </GoogleMapReact>
+                    </div>
+                </div>
             </div>
         );
     }

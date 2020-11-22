@@ -10,6 +10,7 @@
     "bufferutil": "^4.0.2",
     "canvas": "^2.6.1",
     "fibers": "^5.0.0",
+    "google-map-react": "^2.1.9",
     "install-peers": "^1.0.3",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
