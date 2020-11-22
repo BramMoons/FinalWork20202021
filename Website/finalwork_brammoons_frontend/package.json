@@ -14,8 +14,9 @@
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "react-agenda": "0.0.8",
-    "react-data-grid": "^7.0.0-canary.30",
-    "react-dom": "^16.14.0",
+    "react-data-grid": "^7.0.0-canary.33",
+    "react-datasheet": "^1.4.8",
+    "react-dom": "^15.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "sass": "^1.29.0",
@@ -50,7 +51,7 @@
     ]
   },
   "devDependencies": {
-    "react": "^16.14.0",
+    "react": "^15.7.0",
     "ts-node": "^9.0.0",
     "webpack-hot-middleware": "^2.25.0"
   }
