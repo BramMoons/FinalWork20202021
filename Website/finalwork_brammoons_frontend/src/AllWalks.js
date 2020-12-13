@@ -46,6 +46,19 @@ class AllWalks extends React.Component {
 
     valueRenderer = cell => cell.value;
 
+    componentDidMount() {
+        axios.get("http://127.0.0.1:8080/Wandeling/GetAll")
+            .then(this.parseResponse.bind(this));
+    }
+
+    parseResponse(response){
+        console.log("Axios response: ", response);
+        let rows = [];
+        rows = response.data;
+        this.setState({grid: rows})
+        console.log("rows: ", rows);
+    }
+
     onCellsChanged = changes => {
         const grid = this.state.grid;
         changes.forEach(({ cell, row, col, value }) => {

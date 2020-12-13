@@ -9,6 +9,7 @@ import Home from "./Home";
 import AddAnimal from "./AddAnimal";
 import AddWalk from "./AddWalk";
 import AllWalks from "./AllWalks";
+import allAnimals from "./AllAnimals";
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
               <li id="navLi"><NavLink exact to="/AddAnimal">AddAnimal</NavLink></li>
               <li id="navLi"><NavLink exact to="/AddWalk">AddWalk</NavLink></li>
               <li id="navLi"><NavLink exact to="/AllWalks">AllWalks</NavLink></li>
+              <li id="navLi"><NavLink exact to="/AllAnimals">AllAnimals</NavLink></li>
             </ul>
           </div>
           <div className="content">
@@ -30,6 +32,7 @@ class App extends Component {
             <Route path="/AddAnimal" component={AddAnimal} />
             <Route path="/AddWalk" component={AddWalk} />
             <Route path="/AlLWalks" component={AllWalks} />
+            <Route path="/AllAnimals" component={allAnimals} />
           </div>
         </div>
       </HashRouter>

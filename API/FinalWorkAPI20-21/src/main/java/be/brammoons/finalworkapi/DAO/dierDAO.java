@@ -71,7 +71,7 @@ public class dierDAO {
         int aantalAangepasteRijen = 0;
         
             try {
-                aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO dier (soort, ras, grootte, kleur, karakter, geslacht, leeftijd, photoPath) VALUES (?,?,?,?,?,?,?,?)", new Object[] { nieuwDier.getSoort(), nieuwDier.getRas(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
+                aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO dier (naam, soort, ras, grootte, kleur, karakter, geslacht, leeftijd, photoPath) VALUES (?,?,?,?,?,?,?,?,?)", new Object[] { nieuwDier.getNaam(), nieuwDier.getSoort(), nieuwDier.getRas(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -83,7 +83,7 @@ public class dierDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE dier SET soort = ?, ras = ?, grootte = ?, kleur = ?, karakter = ?, geslacht = ?, leeftijd = ? photoPath = ? WHERE dierId = ?", new Object[] { nieuwDier.getSoort(), nieuwDier.getRas(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE dier SET naam = ?, soort = ?, ras = ?, grootte = ?, kleur = ?, karakter = ?, geslacht = ?, leeftijd = ? photoPath = ? WHERE dierId = ?", new Object[] { nieuwDier.getNaam(), nieuwDier.getSoort(), nieuwDier.getRas(), nieuwDier.getGrootte(), nieuwDier.getKleur(), nieuwDier.getKarakter(), nieuwDier.getGeslacht(), nieuwDier.getLeeftijd(), nieuwDier.getPhotoPath() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -104,7 +104,7 @@ public class dierDAO {
     }
     
     private static dier converteerHuidigeRijNaarObject(ResultSet mijnResultset) throws SQLException {
-        return new dier(mijnResultset.getInt("dierId"), mijnResultset.getString("soort"), mijnResultset.getString("ras"), mijnResultset.getInt("grootte"), mijnResultset.getString("karakter"), mijnResultset.getString("geslacht"), mijnResultset.getInt("leeftijd"), mijnResultset.getString(("photoPath")));
+        return new dier(mijnResultset.getInt("dierId"), mijnResultset.getString("naam"), mijnResultset.getString("soort"), mijnResultset.getString("ras"), mijnResultset.getInt("grootte"), mijnResultset.getString("kleur"), mijnResultset.getString("karakter"), mijnResultset.getString("geslacht"), mijnResultset.getInt("leeftijd"), mijnResultset.getString(("photoPath")));
     }
     
     

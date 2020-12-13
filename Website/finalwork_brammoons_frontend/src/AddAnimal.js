@@ -4,19 +4,34 @@ import axios from 'axios';
 class AddAnimal extends React.Component {
 
     constructor() {
-        let Dier = {};
-        dier.ras = "";
-        dier.grootte = "";
+        super();
+        let dier = {};
+        dier.ras = "2";
+        dier.grootte = 25;
         dier.kleur = "";
         dier.karakter = "";
         dier.geslacht = "";
-        dier.leeftijd = "";
-        dier.foto = "";
-        this.state = { dier:{naam: "Jef", ras: "witte herder", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, foto: "WitteHerder.jpg"} }
+        dier.leeftijd = 1;
+        dier.photoPath = "";
+        this.state = { dier:{naam: "Jef", ras: "2", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, photoPath: ""} };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleSubmit() {
-        axios.put("http://127.0.0.1:8080/Dier/voegtoe?dier=" + this.dier);
+        console.log(this.state.dier);
+        axios.put("http://127.0.0.1:8080/Dier/voegtoe?dier="+this.state.dier)
+            .then(this.parseResponse.bind(this))
+            .catch(this.parseError.bind(this));
+    }
+
+    parseError(error){
+        console.log(error);
+    }
+
+    parseResponse(response) {
+        console.log(response);
     }
 
     handleChange(event) {
@@ -32,7 +47,7 @@ class AddAnimal extends React.Component {
                 dier.grootte = event.target.value;
                 break;
             case "kleur":
-                dier.grootte = event.target.value;
+                dier.kleur = event.target.value;
                 break;
             case "karakter":
                 dier.karakter = event.target.value;
@@ -42,9 +57,6 @@ class AddAnimal extends React.Component {
                 break;
             case "leeftijd":
                 dier.leeftijd = event.target.value;
-                break;
-            case "foto":
-                dier.foto = event.target.value;
                 break;
             default:
                 //can be ignored;
@@ -73,7 +85,6 @@ class AddAnimal extends React.Component {
                     <label>Leeftijd van het dier</label><br></br>
                     <input type="number" id="leeftijd" onChange={this.handleChange} value={this.state.dier.leeftijd}></input><br></br>
                     <label>Selecteer foto</label><br></br>
-                    <input type="file" id="foto" name="foto" onChange={this.handleChange}></input><br></br>
                     <input type="submit"></input>
                 </form>
             </div>

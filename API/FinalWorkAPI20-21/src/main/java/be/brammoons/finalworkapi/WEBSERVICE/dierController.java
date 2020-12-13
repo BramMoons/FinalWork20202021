@@ -47,7 +47,7 @@ public class dierController {
     @RequestMapping(value = "/voegtoe", method = RequestMethod.PUT)
     public int voegToe (@RequestParam(value = "dier", defaultValue = "") dier nieuwDier) {
         return dierDAO.voegDierToe(nieuwDier);
-        //aanroepen met '../Dier/voegToe' met json in body
+        //aanroepen met '../Dier/voegToe?dier={}' met json in body
     }
     
     @RequestMapping(value = "/wijzig", method = RequestMethod.POST)

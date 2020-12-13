@@ -11,8 +11,8 @@ package be.brammoons.finalworkapi.MODEL;
  */
 public class dier {
     
-    
     private int dierId;
+    private String naam;
     private String soort;
     private String ras;
     private int grootte;
@@ -28,6 +28,14 @@ public class dier {
 
     public void setDierId(int dierId) {
         this.dierId = dierId;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 
     public String getSoort() {
@@ -53,11 +61,11 @@ public class dier {
     public void setGrootte(int grootte) {
         this.grootte = grootte;
     }
-    
+
     public String getKleur() {
         return kleur;
     }
-    
+
     public void setKleur(String kleur) {
         this.kleur = kleur;
     }
@@ -94,19 +102,32 @@ public class dier {
         this.photoPath = photoPath;
     }
 
-    public dier(int dierId, String soort, String ras, int grootte, String karakter, String geslacht, int leeftijd, String photoPath) {
+    public dier() {
+    }
+
+    public dier(int dierId, String naam, String soort, String ras, int grootte, String kleur, String karakter, String geslacht, int leeftijd, String photoPath) {
         this.dierId = dierId;
+        this.naam = naam;
         this.soort = soort;
         this.ras = ras;
         this.grootte = grootte;
+        this.kleur = kleur;
         this.karakter = karakter;
         this.geslacht = geslacht;
         this.leeftijd = leeftijd;
         this.photoPath = photoPath;
     }
 
-    public dier() {
-    
+    public dier(String naam, String soort, String ras, int grootte, String kleur, String karakter, String geslacht, int leeftijd, String photoPath) {
+        this.naam = naam;
+        this.soort = soort;
+        this.ras = ras;
+        this.grootte = grootte;
+        this.kleur = kleur;
+        this.karakter = karakter;
+        this.geslacht = geslacht;
+        this.leeftijd = leeftijd;
+        this.photoPath = photoPath;
     }
     
 }
