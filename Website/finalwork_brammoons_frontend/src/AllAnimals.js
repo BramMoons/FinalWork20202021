@@ -19,6 +19,7 @@ class AddAnimal extends React.Component {
         rows = response.data;
         this.setState({dier: rows})
         console.log("rows: ", rows);
+        console.log("state", this.state.dier);
     }
 
     render() {
