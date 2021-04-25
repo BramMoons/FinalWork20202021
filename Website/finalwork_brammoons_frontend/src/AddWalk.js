@@ -4,7 +4,7 @@ import axios from 'axios';
 class AddWalk extends React.Component {
 
     constructor(){
-
+        super();
         let walk = {
             "lengte": 5,
             "startuur": 10,
@@ -17,7 +17,7 @@ class AddWalk extends React.Component {
         };
 
         let dier;
-        this.state = { walk, dier };
+        this.state = { walk };
         
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
