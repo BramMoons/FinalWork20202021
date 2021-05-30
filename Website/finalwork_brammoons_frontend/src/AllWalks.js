@@ -84,7 +84,7 @@ class AllWalks extends React.Component {
                     <div style={{ height: '100%', widht: '100%' }}>
                         <GoogleMapReact
                             //Google maps API requires the need of API key before you can use it
-                            bootstrapURLKeys={{ key: 'AIzaSyCam1zls00fGVo0nUgJNlGPdgmRhPST5xc' }}
+                            bootstrapURLKeys={{ key: 'AIzaSyAHPhd_xK4Wy4-Ny9ivGajaon9in9yR204' }}
                             defaultCenter={this.props.center}
                             defaultZoom={this.props.zoom}
                         >
