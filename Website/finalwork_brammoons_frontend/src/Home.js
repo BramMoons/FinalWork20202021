@@ -39,6 +39,7 @@ class Home extends React.Component {
         let rows = [];
         rows = response.data;
         rows.dierId = response.data.dierId;
+        rows.naam = response.data.naam;
         rows.geslacht = response.data.geslacht;
         rows.karakter = response.data.karakter;
         rows.kleur = response.data.kleur;
@@ -68,6 +69,8 @@ class Home extends React.Component {
                 <div id="form2">
                     <form>
                         <label>Gematcht dier</label><br></br>
+                        <label>Naam van het dier</label><br></br>
+                        <input type="text" value={this.state.dier.naam} /><br></br>
                         <label>Ras van het dier</label><br></br>
                         <input type="text" value={this.state.dier.ras} /><br></br>
                         <label>Geslacht van het dier</label><br></br>

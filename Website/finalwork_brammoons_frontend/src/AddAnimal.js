@@ -6,13 +6,14 @@ class AddAnimal extends React.Component {
     constructor() {
         super();
         let dier = {};
+        dier.naam = "Name"
         dier.ras = "2";
         dier.grootte = 25;
         dier.kleur = "";
         dier.karakter = "";
         dier.geslacht = "";
         dier.leeftijd = 1;
-        dier.photoPath = "";
+        dier.photoPath = "Geen";
         this.state = { dier:{naam: "Jef", ras: "2", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, photoPath: ""} };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -84,7 +85,6 @@ class AddAnimal extends React.Component {
                     <input type="text" id="geslacht" onChange={this.handleChange} value={this.state.dier.geslacht}></input><br></br>
                     <label>Leeftijd van het dier</label><br></br>
                     <input type="number" id="leeftijd" onChange={this.handleChange} value={this.state.dier.leeftijd}></input><br></br>
-                    <label>Selecteer foto</label><br></br>
                     <input type="submit"></input>
                 </form>
             </div>
