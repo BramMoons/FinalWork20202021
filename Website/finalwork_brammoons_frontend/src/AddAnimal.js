@@ -7,14 +7,15 @@ class AddAnimal extends React.Component {
         super();
         let dier = {};
         dier.naam = "Name"
-        dier.ras = "2";
+        dier.soort = "Beagle"
+        dier.ras = 2;
         dier.grootte = 25;
         dier.kleur = "";
         dier.karakter = "";
         dier.geslacht = "";
         dier.leeftijd = 1;
         dier.photoPath = "Geen";
-        this.state = { dier:{naam: "Jef", ras: "2", grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, photoPath: ""} };
+        this.state = { dier:{naam: "Jef", soort:"Beagle", ras: 2, grootte: 40, kleur: "wit", karakter: "sociaal", geslacht: "man", leeftijd: 1, photoPath: "Geen"} };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -40,6 +41,9 @@ class AddAnimal extends React.Component {
         switch(event.target.id){
             case "name":
                 dier.naam = event.target.value;
+                break;
+            case "soort":
+                dier.soort = event.target.value;
                 break;
             case "ras":
                 dier.ras = event.target.value;
@@ -74,7 +78,9 @@ class AddAnimal extends React.Component {
                     <label>Naam van het dier</label><br></br>
                     <input type="text" id="name" onChange={this.handleChange} value={this.state.dier.naam}></input><br></br>
                     <label>Ras van het dier</label><br></br>
-                    <input type="text" id="ras" onChange={this.handleChange} value={this.state.dier.ras}></input><br></br>
+                    <input type="text" id="soort" onChange={this.handleChange} value={this.state.dier.soort}></input><br></br>
+                    <label>Soort van het dier</label><br></br>
+                    <input type="number" id="ras" onChange={this.handleChange} value={this.state.dier.ras}></input><br></br>
                     <label>Grootte van het dier</label><br></br>
                     <input type="number" id="grootte" onChange={this.handleChange} value={this.state.dier.grootte}></input><br></br> 
                     <label>Kleur van het dier</label><br></br>
