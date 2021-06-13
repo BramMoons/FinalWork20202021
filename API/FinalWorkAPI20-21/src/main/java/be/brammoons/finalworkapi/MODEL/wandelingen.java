@@ -12,6 +12,7 @@ package be.brammoons.finalworkapi.MODEL;
 public class wandelingen {
     
      private int wandelingId;
+    private String naam;
     private String lengte;
     private int startUur;
     private int stopUur;
@@ -20,6 +21,8 @@ public class wandelingen {
     private int postcode;
     private String gemeente;
     private String datum;
+    private float latitude;
+    private float longitude;
 
     public int getWandelingId() {
         return wandelingId;
@@ -27,6 +30,30 @@ public class wandelingen {
 
     public void setWandelingId(int wandelingId) {
         this.wandelingId = wandelingId;
+    }
+    
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
     public String getLengte() {
@@ -93,14 +120,17 @@ public class wandelingen {
         this.datum = datum;
     }
 
-    public wandelingen(int wandelingId, String lengte, int startUur, int stopUur, String straat, int straatNr, int postcode, String gemeente, String datum) {
+    public wandelingen(int wandelingId, String naam, String lengte, int startUur, int stopUur, String straat, int straatNr, int postcode, String gemeente, String datum, float latitude, float longitude) {
         this.wandelingId = wandelingId;
+        this.naam = naam;
         this.lengte = lengte;
         this.straat = straat;
         this.straatNr = straatNr;
         this.postcode = postcode;
         this.gemeente = gemeente;
         this.datum = datum;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public wandelingen() {

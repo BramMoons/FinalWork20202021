@@ -61,8 +61,8 @@ class Home extends React.Component {
                         <input type="text" id="kleur" onChange={this.handleChange}></input><br></br>
                         <label>Geef een karakter trek mee</label><br></br>
                         <input type="text" id="karakter" onChange={this.handleChange}></input><br></br>
-                        <input type="submit" onClick={this.handleSubmit}></input>
-                        <button type="button" onClick={this.handleSubmit}>Verzenden2</button>
+                        <button type="button" onClick={this.handleSubmit}>Verzenden</button>
+                        <hr></hr>
                     </form>
                 </div>
                 <div id="form2">

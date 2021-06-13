@@ -17,28 +17,12 @@ class AllWalks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
-            grid: [
-                [
-                    {readOnly: true},
-                    {value: 1},
-                    {value: 2},
-                    {value: 3},
-                    {value: 4}
-                ],
-                [
-                    {readOnly: true},
-                    {value: 1},
-                    {value: 2},
-                    {value: 3},
-                    {value: 4}
-                ]
-            ]
+            asielen: []
         }
     }
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:8080/Wandeling/GetAll")
+        axios.get("http://127.0.0.1:8080/Asiel/GetAll")
             .then(this.parseResponse.bind(this));
         console.log("Axios happend");
     }
@@ -47,31 +31,29 @@ class AllWalks extends React.Component {
         console.log("Axios response: ", response);
         let rows = [];
         rows = response.data;
-        this.setState({data: rows});
+        this.setState({asielen: rows});
         console.log("at end componentmount: ", this.state.data);
         console.log("only streetname", rows[0].straat);
     }
 
     render() {
         
-        const {data} = this.state;
+        const {asielen} = this.state;
 
         return(
-            <div id="AllWalks">
-                <h1>All walks test page</h1>
+            <div id="AllAsielen">
+                <h1>Alle asielen</h1>
 
                 <div>
                     <ol classname="item">
                         {
-                            data.map(datas=>(
-                                <ol key={datas.wandelingId} align="start">
+                            asielen.map(asielen=>(
+                                <ol key={asielen.asielId} align="start">
                                     <div>
-                                        <p className="naam">{datas.naam}</p>
-                                        <p className="lengte">{datas.lengte} kilometer</p>
-                                        <p className="startuur">start om: {datas.startUur} uur en einde om: {datas.stopUur} uur</p>
-                                        <p className="straat">{datas.straat} {datas.straatNr}</p>
-                                        <p className="postcode">{datas.postcode} {datas.gemeente}</p>
-                                        <p className="datum">{datas.datum}</p>
+                                        <p className="naam">{asielen.naam}</p>
+                                        <p className="dieren">Beschikbare dieren: {asielen.dieren}</p>
+                                        <p className="straat">{asielen.straat} {asielen.straatNr}</p>
+                                        <p className="postcode">{asielen.postcode} {asielen.gemeente}</p>
                                     </div>
                                     <hr></hr>
                                 </ol>
@@ -89,11 +71,11 @@ class AllWalks extends React.Component {
                             defaultZoom={this.props.zoom}
                         >
                                 {
-                                    data.map(datas => (
+                                    asielen.map(asielen => (
                                         <AnyReactComponent
-                                            lat={datas.latitude}
-                                            lng={datas.longitude}
-                                            text={datas.naam}
+                                            lat={asielen.latitude}
+                                            lng={asielen.longitude}
+                                            text={asielen.naam}
                                         />
                                     ))
                                 }

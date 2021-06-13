@@ -19,6 +19,8 @@ public class asiel {
     private int postcode;
     private String gemeente;
     private String photoPath;
+    private float latitude;
+    private float longitude;
 
     public int getAsielId() {
         return asielId;
@@ -26,6 +28,22 @@ public class asiel {
 
     public void setAsielId(int asielId) {
         this.asielId = asielId;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
     public String getNaam() {
@@ -84,7 +102,7 @@ public class asiel {
         this.photoPath = photoPath;
     }
 
-    public asiel(int asielId, String naam, String dieren, String straat, int straatNr, int postcode, String gemeente, String photoPath) {
+    public asiel(int asielId, String naam, String dieren, String straat, int straatNr, int postcode, String gemeente, String photoPath, float latitude, float longitude) {
         this.asielId = asielId;
         this.naam = naam;
         this.dieren = dieren;
@@ -93,6 +111,8 @@ public class asiel {
         this.postcode = postcode;
         this.gemeente = gemeente;
         this.photoPath = photoPath;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public asiel() {

@@ -54,7 +54,7 @@ public class asielDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO asiel ( naam, dieren, straat, straatNr, postcode, gemeente, photoPath ) VALUES ( ?, ?, ?, ?, ?, ?, ? )", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getPhotoPath() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("INSERT INTO asiel ( naam, dieren, straat, straatNr, postcode, gemeente, photoPath, latitude, longitude ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getPhotoPath() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class asielDAO {
         int aantalAangepasteRijen = 0;
         
         try {
-            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE asiel SET naam = ?, dieren = ?, straat = ?, straatNr = ?, postode = ?, gemeente = ?, photoPath = ? WHERE asielId = ?", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getAsielId(), nieuwAsiel.getPhotoPath() });
+            aantalAangepasteRijen = Database.voerSqlUitEnHaalAantalAangepasteRijenOp("UPDATE asiel SET naam = ?, dieren = ?, straat = ?, straatNr = ?, postode = ?, gemeente = ?, photoPath = ?, latitude = ?, longitude = ? WHERE asielId = ?", new Object[] { nieuwAsiel.getNaam(), nieuwAsiel.getDieren(), nieuwAsiel.getStraat(), nieuwAsiel.getStraatNr(), nieuwAsiel.getPostcode(), nieuwAsiel.getGemeente(), nieuwAsiel.getAsielId(), nieuwAsiel.getPhotoPath(), nieuwAsiel.getLatitude(), nieuwAsiel.getLongitude() });
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -87,7 +87,7 @@ public class asielDAO {
     }
     
     private static asiel converteerHuidigeRijNaarObject(ResultSet mijnResultset) throws SQLException {
-        return new asiel (mijnResultset.getInt("asielid"), mijnResultset.getString("naam"), mijnResultset.getString("dieren"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"), mijnResultset.getString("photoPath"));
+        return new asiel (mijnResultset.getInt("asielid"), mijnResultset.getString("naam"), mijnResultset.getString("dieren"), mijnResultset.getString("straat"), mijnResultset.getInt("straatNr"), mijnResultset.getInt("postcode"), mijnResultset.getString("gemeente"), mijnResultset.getString("photoPath"), mijnResultset.getFloat("latitude"), mijnResultset.getFloat("longitude"));
     }
     
 }
